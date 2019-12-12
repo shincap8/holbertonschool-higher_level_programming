@@ -6,13 +6,13 @@ if __name__ == '__main__':
         sys.exit(1)
     operator = sys.argv[2]
     if operator == "+":
-        print(add(int(sys.argv[1]), int(sys.argv[3])))
+        print("{:d}".format(add(int(sys.argv[1]), int(sys.argv[3]))))
     elif operator == "-":
-        print(sub(int(sys.argv[1]), int(sys.argv[3])))
+        print("{:d}".format(sub(int(sys.argv[1]), int(sys.argv[3]))))
     elif operator == "*":
-        print(int(mul(sys.argv[1]), int(sys.argv[3])))
+        print("{:d}".format(int(mul(sys.argv[1]), int(sys.argv[3]))))
     elif operator == "/":
-        print(div(int(sys.argv[1]), int(sys.argv[3])))
+        print("{:d}".format(div(int(sys.argv[1]), int(sys.argv[3]))))
     else:
-        print("Unknown operator. Available operators: +, -, * and /i")
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
