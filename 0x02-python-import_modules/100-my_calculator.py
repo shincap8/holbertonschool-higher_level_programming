@@ -5,8 +5,8 @@ if __name__ == '__main__':
     if len(sys.argv) != 4:
         sys.exit(1)
     operator = sys.argv[2]
-    a = sys.argv[1]
-    b = sys.argv[3]
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
     if operator == "+":
         print("{:d} {} {:d} = {:d}".format(a, operator, b, add(a, b)))
     elif operator == "-":
