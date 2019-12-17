@@ -9,19 +9,26 @@
 int is_palindrome(listint_t **head)
 {
 	size_t nodes = 0;
-	unsigned int i, x;
+	unsigned int i, j, x;
 	listint_t *tmp = *head, *backwards;
 
-	if (*head == NULL || head = NULL)
-		return(1);
+	if (*head == NULL || head == NULL)
+		return (1);
 	while (tmp)
 	{
 		tmp = tmp->next;
 		nodes++;
 	}
-	if ((nodes % 2) == 0)
-		x = 
+	x = nodes / 2;
 	tmp = *head;
-	while ()
-	return (nodes);
+	for (i = 1; i <= x; i++)
+	{
+		backwards = tmp;
+		for (j = i; j <= (nodes - i); j++)
+			backwards = backwards->next;
+		if (tmp->n != backwards->n)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
