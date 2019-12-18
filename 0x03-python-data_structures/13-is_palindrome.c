@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-* is_palindrome- checks if a list is palindrom
+* is_palindrome- checks if a list is palindrome
 * @head: double pointer to the first element
 *
 * Description: this function prints all elements of a list
@@ -10,25 +10,22 @@ int is_palindrome(listint_t **head)
 {
 	size_t nodes = 0;
 	unsigned int i = 1, j, x;
-	listint_t *tmp = *head, *backwards;
+	int tmp[1000] ;
 
 	if (*head == NULL || head == NULL)
 		return (1);
-	while (tmp)
+	while (*head)
 	{
-		tmp = tmp->next;
+		tmp[nodes] = *head->n;
+		*head = *head->next;
 		nodes++;
 	}
 	x = nodes / 2;
-	tmp = *head;
-	while (i <= x)
+	for (i = 1, i <= x, i++)
 	{
-		backwards = tmp, j = i;
-		while (j <= (nodes - i))
-			backwards = backwards->next, j++;
-		if (tmp->n != backwards->n)
+		j = nodes - i;
+		if (tmp[i] != tmp[j])
 			return (0);
-		tmp = tmp->next, i++;
 	}
 	return (1);
 }
