@@ -2,11 +2,11 @@
 class Square:
     def __init__(self, size=0):
         try:
-            if not isinstance(value, int):
+            if not isinstance(size, int):
                 raise TypeError
-            if value < 0:
+            if size < 0:
                 raise ValueError
-            self.__size = value
+            self.__size = size
         except TypeError:
             raise TypeError("size must be an integer")
         except ValueError:
