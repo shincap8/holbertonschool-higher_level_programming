@@ -6,10 +6,10 @@ import math
 class MagicClass:
     """Magic Class"""
     def __init__(self, radius=0):
-        if type(radius) is not int or type(radius) is not float:
+        self.__radius = 0
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
-        else:
-            self.__radius = radius
+        self.__radius = radius
 
     def area(self):
         """Area method"""
