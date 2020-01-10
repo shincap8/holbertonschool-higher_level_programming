@@ -1,31 +1,8 @@
 #!/usr/bin/python3
 class Square:
     def __init__(self, size=0, position=(0, 0)):
-        try:
-            if not isinstance(size, int):
-                raise TypeError
-            if size < 0:
-                raise ValueError
-            self.__size = size
-        except TypeError:
-            raise TypeError("size must be an integer")
-        except ValueError:
-                raise ValueError("size must be >= 0")
-
-        try:
-            if isinstance(position, tuple):
-                for i in range(len(position)):
-                    if i < 0:
-                        raise ValueError
-                if i > 1:
-                    raise IndexError
-                self.__position = position
-            else:
-                raise TypeError
-        except (ValueError, IndexError, TypeError):
-            raise ValueError("position must be a tuple of 2 positive integers")
-            raise IndexError("position must be a tuple of 2 positive integers")
-            raise TypeError("position must be a tuple of 2 positive integers")
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -33,6 +10,16 @@ class Square:
 
     @size.setter
     def size(self, value):
+        try:
+            if not isinstance(value, int):
+                raise TypeError
+            if value < 0:
+                raise ValueError
+            self.__size = value
+        except TypeError:
+            raise TypeError("size must be an integer")
+        except ValueError:
+                raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
@@ -41,7 +28,20 @@ class Square:
 
     @size.setter
     def position(self, value):
-        self.__position = value
+        try:
+            if isinstance(value, tuple):
+                for i in range(len(value)):
+                    if i < 0:
+                        raise ValueError
+                if i > 1:
+                    raise IndexError
+                self.__position = value
+            else:
+                raise TypeError
+        except (ValueError, IndexError, TypeError):
+            raise ValueError("position must be a tuple of 2 positive integers")
+            raise IndexError("position must be a tuple of 2 positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         return self.__size * self.__size
