@@ -3,6 +3,8 @@
    Function to divide a matrix
    by the same variable
 """
+
+
 def matrix_divided(matrix, div):
     """matrix_divided"""
     length = 0
@@ -27,6 +29,6 @@ def matrix_divided(matrix, div):
     for item in matrix:
         submatrix = []
         for x in item:
-           submatrix.append(round(float(x / div), 2))
+            submatrix.append(round(float(x / div), 2))
         new_matrix.append(submatrix)
     return new_matrix
