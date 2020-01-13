@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
         length = len(matrix[0])
         if len(item) != length:
             raise TypeError(mssg2)
-    if type(div) is not int and type(div) is not float and (div is float('nan') or div is float('inf')):
+    if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == float('inf'):
         raise TypeError("div must be a number")
