@@ -42,7 +42,8 @@ class Rectangle:
 
     def __str__(self):
         string = ""
-        if self.__height == 0 or self.__height == 0:
+        if self.__height == 0 or self.__width == 0:
+            print(entre)
             return string
         for i in range(self.__height):
             string = string + ("#" * self.__width) + "\n"
