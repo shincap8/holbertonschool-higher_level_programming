@@ -54,4 +54,4 @@ class Rectangle:
         return "Rectangle(" + str1 + ", " + str2 + ")"
 
     def __del__(self):
-        print ("Bye rectangle...")
+        print("Bye rectangle...")
