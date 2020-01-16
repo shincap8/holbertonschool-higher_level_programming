@@ -1,2 +1,4 @@
-def magic_string(i += 1):
-    return ("Holberton" + (",  Holberton") * i)
+#!/usr/bin/python3
+def magic_string(str1 = []):
+    str1 += ["Holberton"]
+    return (", ".join(str1))
