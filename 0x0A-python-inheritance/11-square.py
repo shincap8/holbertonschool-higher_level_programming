@@ -40,4 +40,4 @@ class Square(Rectangle):
         Rectangle.__init__(self, self.__size, self.__size)
 
     def __str__(self):
-        return("[Square] " + str(self.__size) + "/" + str(self.__size))
+        return ("[Square] " + str(self.__size) + "/" + str(self.__size))
