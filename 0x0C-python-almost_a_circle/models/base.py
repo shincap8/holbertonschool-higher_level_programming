@@ -22,8 +22,7 @@ class Base:
         """comment"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -57,6 +56,33 @@ class Base:
     def load_from_file(cls):
         """comment"""
         filename = cls.__name__ + ".json"
+        text = ""
+        instlist = []
+        try:
+            with open(filename, "r", encoding="UTF-8") as f:
+                text = f.read()
+                obj = cls.from_json_string(text)
+                for i in obj:
+                    instlist.append(cls.create(**i))
+                return instlist
+        except:
+            return instlist
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """comment"""
+        obj = []
+        if list_objs is not None:
+            for i in list_objs:
+                obj.append(i.to_dictionary())
+        filename = "" + cls.__name__ + ".csv"
+        with open(filename, mode="w", encoding="UTF-8") as f:
+            f.write(cls.to_json_string(obj))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """comment"""
+        filename = cls.__name__ + ".csv"
         text = ""
         instlist = []
         try:
