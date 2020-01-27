@@ -21,7 +21,7 @@ class Base:
         """comment"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return ("[]")
-        return json.dumps(list_dictionaries)
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -39,7 +39,7 @@ class Base:
         """comment"""
         if json_string is None or len(json_string) == 0:
             return ("[]")
-        return json.loads(json_string)
+        return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
