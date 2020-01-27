@@ -76,7 +76,7 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
-        """commment"""
+        """display"""
         string = ""
         for i in range(self.y):
             print()
@@ -85,14 +85,14 @@ class Rectangle(Base):
         print(string[:-1])
 
     def __str__(self):
-        """commment"""
+        """str"""
         string = "[Rectangle] (" + str(self.id) + ") "
         string = string + str(self.x) + "/" + str(self.y)
         string = string + " - " + str(self.width) + "/" + str(self.height)
         return string
 
     def update(self, *args, **kwargs):
-        """commment"""
+        """update"""
         attributes = ["id", "width", "height", "x", "y"]
         if args and len(args) > 0:
             for i in range(len(args)):
@@ -101,7 +101,7 @@ class Rectangle(Base):
             setattr(self, k, v)
 
     def to_dictionary(self):
-        """commment"""
+        """dictionary"""
         dictionary = {}
         dictionary['x'] = self.x
         dictionary['y'] = self.y

@@ -10,7 +10,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """method init"""
+        """init"""
         if id is not None:
             self.id = id
         else:
@@ -38,7 +38,7 @@ class Base:
     def from_json_string(json_string):
         """method 4"""
         if json_string is None or len(json_string) == 0:
-            return []
+            return "[]"
         return json.loads(json_string)
 
     @classmethod
