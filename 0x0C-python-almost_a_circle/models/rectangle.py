@@ -6,9 +6,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """commment"""
+    """Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ """
+        """Init"""
         self.width = width
         self.height = height
         self.x = x
@@ -17,12 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """commment"""
+        """getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """commment"""
+        """setter"""
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value <= 0:
@@ -31,12 +31,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """commment"""
+        """getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """commment"""
+        """setter"""
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value <= 0:
@@ -45,12 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """commment"""
+        """getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """commment"""
+        """setter"""
         if type(value) is not int:
             raise TypeError('x must be an integer')
         if value < 0:
@@ -59,12 +59,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """commment"""
+        """getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """commment"""
+        """setter"""
         if type(value) is not int:
             raise TypeError('y must be an integer')
         if value < 0:
@@ -72,7 +72,7 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """commment"""
+        """area"""
         return (self.width * self.height)
 
     def display(self):
