@@ -17,6 +17,7 @@ class Base:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """comment"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
