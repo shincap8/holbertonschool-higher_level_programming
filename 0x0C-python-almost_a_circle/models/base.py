@@ -35,4 +35,24 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        cls()
+        if cls.__name__ is "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ is "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        text = ""
+        instlist = []
+        try:
+            with open(filename, "r", encoding="UTF-8") as f:
+                text = f.read()
+                obj = cls.from_json_string(text)
+                for i in obj:
+                    instlist.append(cls.create(**i))
+                return instlist
+        except:
+            return instlist
