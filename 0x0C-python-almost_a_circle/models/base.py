@@ -6,11 +6,11 @@ import json
 
 
 class Base:
-    """Base"""
+    """comment"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """init"""
+        """comment"""
         if id is not None:
             self.id = id
         else:
@@ -18,14 +18,14 @@ class Base:
             self.id = type(self).__nb_objects
 
     def to_json_string(list_dictionaries):
-        """method 2"""
+        """comment"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """method 3"""
+        """comment"""
         obj = []
         if list_objs is not None:
             for i in list_objs:
@@ -36,14 +36,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """method 4"""
+        """comment"""
         if json_string is None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """method 5"""
+        """comment"""
         if cls.__name__ is "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ is "Square":
@@ -53,7 +53,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """method 6"""
+        """comment"""
         filename = cls.__name__ + ".json"
         text = ""
         instlist = []

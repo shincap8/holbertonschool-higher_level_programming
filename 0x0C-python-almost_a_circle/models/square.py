@@ -6,7 +6,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square"""
+    """comment"""
     def __init__(self, size, x=0, y=0, id=None):
         """init"""
         super().__init__(size, size, x, y, id)
@@ -14,24 +14,24 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """size"""
+        """comment"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """setter"""
+        """comment"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """str"""
+        """comment"""
         string = "[Square] (" + str(self.id) + ") "
         string = string + str(self.x) + "/" + str(self.y)
         string = string + " - " + str(self.width)
         return string
 
     def update(self, *args, **kwargs):
-        """update"""
+        """comment"""
         attributes = ["id", "size", "x", "y"]
         if args and len(args) > 0:
             for i in range(len(args)):
@@ -40,7 +40,7 @@ class Square(Rectangle):
             setattr(self, k, v)
 
     def to_dictionary(self):
-        """dictionary"""
+        """comment"""
         dictionary = {}
         dictionary['id'] = self.id
         dictionary['x'] = self.x
