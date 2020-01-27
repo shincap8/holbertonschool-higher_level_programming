@@ -4,8 +4,11 @@ import json
 
 
 class Base:
+    """ """
     __nb_objects = 0
+
     def __init__(self, id=None):
+        """ """
         if id is not None:
             self.id = id
         else:
@@ -13,15 +16,17 @@ class Base:
             self.id = type(self).__nb_objects
 
     def to_json_string(list_dictionaries):
-        if len(list_dictionaries) <= 0 or list_dictionaries == None:
+        """ """
+        if len(list_dictionaries) <= 0 or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ """
         obj = []
         if list_objs is not None:
-            for i in list_objs: 
+            for i in list_objs:
                 obj.append(i.to_dictionary())
         filename = "" + cls.__name__ + ".json"
         with open(filename, mode="w", encoding="UTF-8") as f:
@@ -29,12 +34,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ """
         if len(json_string) <= 0 or json_string is None:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """ """
         if cls.__name__ is "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ is "Square":
@@ -44,6 +51,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ """
         filename = cls.__name__ + ".json"
         text = ""
         instlist = []
