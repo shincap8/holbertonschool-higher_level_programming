@@ -94,3 +94,40 @@ class Base:
                 return instlist
         except:
             return instlist
+
+  @staticmethod
+    def draw(list_rectangles, list_squares):
+        ob_list = []
+        for obj in list_rectangles:
+            ob_list.append(obj.to_dictionary())
+        for el in ob_list:
+            franklin = turtle.Turtle()
+            franklin.speed(2)
+            franklin.color("blue")
+            franklin.pensize(5)
+            franklin.penup()
+            franklin.setposition(el['x'], el['y'])
+            for i in range(2):
+                franklin.pendown()
+                franklin.forward(el['width'])
+                franklin.left(90)
+                franklin.forward(el['height'])
+                franklin.left(90)
+            franklin.hideturtle()
+        ob_list = []
+        turtle.clearscreen()
+        for obj in list_squares:
+            ob_list.append(obj.to_dictionary())
+        for el in ob_list:
+            franklin = turtle.Turtle()
+            franklin.color("purple")
+            franklin.speed(2)
+            franklin.pensize(3)
+            franklin.penup()
+            franklin.setposition(el['x'], el['y'])
+            for i in range(4):
+                franklin.pendown()
+                franklin.forward(el['size'])
+                franklin.left(90)
+            franklin.hideturtle()
+        turtle.done()
