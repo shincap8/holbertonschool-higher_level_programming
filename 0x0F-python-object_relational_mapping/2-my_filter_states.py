@@ -9,7 +9,7 @@ if __name__ == '__main__':
                          user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     curs = db.cursor()
     curs.execute("SELECT id, name FROM states \
-        WHERE name = '" + sys.argv[4] + "' ORDER BY id;")
+        WHERE name LIKE BINARY'"{}%"' ORDER BY id;".format(sys.argv[4]))
     rows = curs.fetchall()
     for r in rows:
         print(r)
