@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that prints the first State object from the database hbtn_0e_6_usa"""
+"""script that deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
 
     import sys
@@ -14,6 +14,7 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    for sid, name in session.query(State.id, State.name).filter(State.id == 1):
-        print("{}: {}".format(sid, name))
+    for state in session.query(State).filter(State.name.ilike('%a%')):
+        session.delete(state)
+    session.commit()
     session.close()

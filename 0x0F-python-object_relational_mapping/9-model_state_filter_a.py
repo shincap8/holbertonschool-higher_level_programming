@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""script that lists all State objects that contain the letter a from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
 
     import sys
@@ -15,3 +16,4 @@ if __name__ == "__main__":
 
     for sid, name in session.query(State.id, State.name).filter(State.name.ilike('%a%')):
         print("{}: {}".format(sid, name))
+    session.close()

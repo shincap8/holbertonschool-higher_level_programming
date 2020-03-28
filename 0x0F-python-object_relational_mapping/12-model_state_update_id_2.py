@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that prints the first State object from the database hbtn_0e_6_usa"""
+"""script that changes the name of a State object from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
 
     import sys
@@ -14,6 +14,7 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    for sid, name in session.query(State.id, State.name).filter(State.id == 1):
-        print("{}: {}".format(sid, name))
+    x = session.query(State).get(2)
+    x.name = 'New Mexico'
+    session.commit()
     session.close()

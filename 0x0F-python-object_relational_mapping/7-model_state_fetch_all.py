@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" script that lists all State objects from the database hbtn_0e_6_usa"""
 if __name__ == "__main__": 
 
     import sys
@@ -16,3 +17,4 @@ if __name__ == "__main__":
 
     for sid, name in session.query(State.id, State.name).order_by(State.id):
         print("{}: {}".format(sid, name))
+    session.close()
