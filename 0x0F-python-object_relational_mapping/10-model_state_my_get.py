@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""script that prints the State object with the name passed as argument from the database hbtn_0e_6_usa"""
+"""script that prints the State object with the name
+passed as argument from the database hbtn_0e_6_usa"""
 if __name__ == "__main__":
 
     import sys
@@ -15,8 +16,9 @@ if __name__ == "__main__":
     session = Session()
 
     sid = None
-    for sid, name in session.query(State.id, State.name).filter(State.name == sys.argv[4]):
+    for sid, name in session.query(State.id, State.name).\
+            filter(State.name == sys.argv[4]):
         print(sid)
-    if sid == None:
+    if sid is None:
         print("Not found")
     session.close()
