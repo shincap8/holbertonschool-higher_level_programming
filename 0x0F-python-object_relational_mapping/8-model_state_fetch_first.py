@@ -14,6 +14,6 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    for sid, name in session.query(State.id, State.name).filter(State.id == 1):
+    for sid, name in session.query(State.id, State.name).first():
         print("{}: {}".format(sid, name))
     session.close()
