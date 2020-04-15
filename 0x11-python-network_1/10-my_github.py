@@ -6,7 +6,7 @@ from sys import argv
 
 url = "https://api.github.com/user"
 headers = {"X-Github-Username": argv[1],
-          "Authorization": "token " + argv[2]}
+           "Authorization": "token " + argv[2]}
 try:
     r = requests.get(url, headers=headers)
     print(r.json()["id"])
