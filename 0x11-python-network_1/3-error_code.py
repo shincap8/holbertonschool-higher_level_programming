@@ -6,10 +6,11 @@ from urllib.error import HTTPError
 import sys
 
 
-req = request.Request(sys.argv[1])
-try:
-    with request.urlopen(req) as res:
-        body = res.read()
-    print(body.decode("utf-8"))
-except HTTPError as er:
-    print("Error code: {}".format(er.code))
+if __name__ == "__main__":
+    req = request.Request(sys.argv[1])
+    try:
+        with request.urlopen(req) as res:
+            body = res.read()
+        print(body.decode("utf-8"))
+    except HTTPError as er:
+        print("Error code: {}".format(er.code))
