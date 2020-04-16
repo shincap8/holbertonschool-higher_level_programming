@@ -6,7 +6,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if len(argv) < 3:
+    if len(argv) >= 3:
         url = "https://api.github.com/repos/"+argv[2]+"/"+argv[1]+"/commits"
         r = requests.get(url)
         commits = r.json()
