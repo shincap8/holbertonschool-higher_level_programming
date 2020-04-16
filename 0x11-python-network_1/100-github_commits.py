@@ -6,10 +6,11 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/"+argv[2]+"/"+argv[1]+"/commits"
-    r = requests.get(url)
-    commits = r.json()
-    for i in range(10):
-        sha = commits[i]["sha"]
-        name = commits[i]["commit"]["author"]["name"]
-        print("{}: {}".format(sha, name))
+    if len(argv) == 3:
+        url = "https://api.github.com/repos/"+argv[2]+"/"+argv[1]+"/commits"
+        r = requests.get(url)
+        commits = r.json()
+        for i in range(10):
+            sha = commits[i]["sha"]
+            name = commits[i]["commit"]["author"]["name"]
+            print("{}: {}".format(sha, name))
