@@ -9,10 +9,8 @@ request(myArgs[0], function (error, response, body) {
   } else {
     const list = JSON.parse(body).results;
     for (const i of list) {
-      for (const j of i.characters) {
-        if (j === character) {
-          count++;
-        }
+      if (i.characters.includes(character)) {
+        count++;
       }
     }
     console.log(count);
